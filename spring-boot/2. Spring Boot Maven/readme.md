@@ -85,7 +85,7 @@ any clash when the war is deployed in a servlet container.
   
   <p> Disable layot
     
-  ```sh
+```sh
  <project>
     <build>
         <plugins>
@@ -101,11 +101,11 @@ any clash when the war is deployed in a servlet container.
         </plugins>
     </build>
 </project>
-   ```
+ ```
 
 ## Custom Layers Configuration
     
-``sh
+```sh
     <project>
     <build>
         <plugins>
@@ -123,7 +123,10 @@ any clash when the war is deployed in a servlet container.
     </build>
 </project>
 ```
+
+
 <p> layers.xml
+
   
 ```sh
   <layers xmlns="http://www.springframework.org/schema/boot/layers"
