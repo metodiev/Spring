@@ -163,4 +163,30 @@ any clash when the war is deployed in a servlet container.
  <p>• The <dependencies> block defines how dependencies should be layered.
  <p>• The <layerOrder> block defines the order that the layers should be written.
   
+  <p> r if you prefer to keep the original artifact and attach the repackaged one with a
+different classifier, configure the plugin as shown in the following example:
     
+ ```xml
+    <project>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>repackage</id>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>exec</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
+ ```   
