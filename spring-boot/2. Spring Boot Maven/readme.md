@@ -52,13 +52,13 @@ example:
 </build>
 ```
 
-The layout property defaults to a value determined by the archive type (jar or war). The following
+<p>The layout property defaults to a value determined by the archive type (jar or war). The following
 layouts are available:
-• JAR: regular executable JAR layout.
-• WAR: executable WAR layout. provided dependencies are placed in WEB-INF/lib-provided to avoid
+<p>• JAR: regular executable JAR layout.
+<p>• WAR: executable WAR layout. provided dependencies are placed in WEB-INF/lib-provided to avoid
 any clash when the war is deployed in a servlet container.
-• ZIP (alias to DIR): similar to the JAR layout using PropertiesLauncher.
-• NONE: Bundle all dependencies and project resources. Does not bundle a bootstrap loader.
+<p>• ZIP (alias to DIR): similar to the JAR layout using PropertiesLauncher.
+<p>• NONE: Bundle all dependencies and project resources. Does not bundle a bootstrap loader.
 
 ```sh
 <build>
