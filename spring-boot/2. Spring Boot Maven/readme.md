@@ -12,9 +12,9 @@ Inheriting the Starter Parent POM:
   <version>3.0.1</version>
 </parent>
 
-Without Starter parent POM:
 ```
 
+Without Starter parent POM:
 ```sh
 <dependencyManagement>
   <dependencies>
