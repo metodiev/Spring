@@ -82,3 +82,23 @@ any clash when the war is deployed in a servlet container.
 </build>
 
 ```
+  
+  <p> Disable layot
+    
+  ```sh
+ <project>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <layers>
+                        <enabled>false</enabled>
+                    </layers>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+   ```
