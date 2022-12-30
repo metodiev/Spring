@@ -102,3 +102,62 @@ any clash when the war is deployed in a servlet container.
     </build>
 </project>
    ```
+
+## Custom Layers Configuration
+    
+``sh
+    <project>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <layers>
+                        <enabled>true</enabled>
+                        <configuration>${project.basedir}/src/layers.xml</configuration>
+                    </layers>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+<p> layers.xml
+  
+```sh
+  <layers xmlns="http://www.springframework.org/schema/boot/layers"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/boot/layers
+  https://www.springframework.org/schema/boot/layers/layers3.0.xsd">
+    <application>
+        <into layer="spring-boot-loader">
+            <include>org/springframework/boot/loader/**</include>
+        </into>
+        <into layer="application" />
+    </application>
+    <dependencies>
+        <into layer="application">
+            <includeModuleDependencies />
+        </into>
+        <into layer="snapshot-dependencies">
+            <include>*:*:*SNAPSHOT</include>
+        </into>
+        <into layer="dependencies" />
+    </dependencies>
+    <layerOrder>
+        <layer>dependencies</layer>
+        <layer>spring-boot-loader</layer>
+        <layer>snapshot-dependencies</layer>
+        <layer>application</layer>
+    </layerOrder>
+</layers>
+```
+  
+
+ <p>  The layers XML format is defined in three sections:
+ <p>• The <application> block defines how the application classes and resources should be layered.
+ <p>• The <dependencies> block defines how dependencies should be layered.
+ <p>• The <layerOrder> block defines the order that the layers should be written.
+  
+    
